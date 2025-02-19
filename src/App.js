@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Child from "./child";
 
-function App() {
+function Parent() {
+  const [childData, setDataChild] = useState('');
+
+
+  function handleDataChild(data) {
+    setDataChild(data);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Data from Child: {childData}</h1  >
+      <Child sendDataToParent={handleDataChild} />
     </div>
   );
 }
 
-export default App;
+export default Parent;
