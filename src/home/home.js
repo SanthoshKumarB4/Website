@@ -1,51 +1,103 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./home.css";
-class ProductList extends React.Component {
+
+const ProductList = () => {
+    const [products, setProducts] = useState([]);
+    const [currentSlides, setCurrentSlides] = useState({});
   
-    constructor(props) {
-        super(props);
-        this.state = {
-            products: [],
-            DataisLoaded: false,
-        };
-    }
-
-    componentDidMount() {
-        fetch('https://dummyjson.com/products')
-            .then(res => res.json())
-            .then((json) => {
-                this.setState({
-                    products: json.products,  // assuming the products are in the "products" field
-                    DataisLoaded: true,
-                });
-            });
-    }
-
-    render() {
-        const { DataisLoaded, products } = this.state;
-        
-        if (!DataisLoaded) {
-            return <h1 className="loading-message">Loading...</h1>;
-        }
-
-        return (
-            <div>
-                <h1 style={{ textAlign: "center" }}>Product List</h1>
-                <div className="product-list">
-                    {products.map((product) => (
-                        <div className="product-card"> {product.id} 
-                        <p>{product.title}</p>
-                            <p>{product.description}</p>
-                            <p className="price">Price: ${product.price}</p>
-                            <p>Rating:{product.rating}</p>
-                        
-                        </div>
-                        
-                    ))}
+    useEffect(() => {
+      fetch('https://dummyjson.com/products/category/smartphones')
+        .then(res => res.json())
+        .then((json) => {
+          // Initialize currentSlides with 0 for each product
+          const slides = json.products.reduce((acc, product) => {
+            acc[product.id] = 0;
+            return acc;
+          }, {});
+          setCurrentSlides(slides);
+          setProducts(json.products);
+        });
+    }, []);
+  
+    const nextSlide = (productId, totalImages) => {
+      setCurrentSlides(prev => ({
+        ...prev,
+        [productId]: (prev[productId] + 1) % totalImages
+      }));
+    };
+  
+    const prevSlide = (productId, totalImages) => {
+      setCurrentSlides(prev => ({
+        ...prev,
+        [productId]: (prev[productId] - 1 + totalImages) % totalImages
+      }));
+    };
+  
+    const goToSlide = (productId, index) => {
+      setCurrentSlides(prev => ({
+        ...prev,
+        [productId]: index
+      }));
+    };
+  
+    return (
+      <div className="product-list-container">
+        <h1 style={{ textAlign: "center" }}>Product List</h1>
+        <div className="product-list">
+          {products.map((product) => (
+            <div key={product.id} className="product-card">
+              <div className="slider-container">
+                <div className="slider-images" style={{
+                  transform: `translateX(-${currentSlides[product.id] * 100}%)`
+                }}>
+                  {product.images.map((image, index) => (
+                    <img key={index} src={image} alt={`Product ${index + 1}`} />
+                  ))}
                 </div>
+                <button 
+                  className="slider-button prev-button"
+                  onClick={() => prevSlide(product.id, product.images.length)}
+                >
+                  ←
+                </button>
+                <button 
+                  className="slider-button next-button"
+                  onClick={() => nextSlide(product.id, product.images.length)}
+                >
+                  →
+                </button>
+                <div className="slider-dots">
+                  {product.images.map((_, index) => (
+                    <span
+                      key={index}
+                      className={`dot ${currentSlides[product.id] === index ? 'active' : ''}`}
+                      onClick={() => goToSlide(product.id, index)}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="product-info">
+                <h2 className="product-title">{product.title}</h2>
+                <p className="product-description">{product.description}</p>
+                <p className="price">{product.price}</p>
+                <div className={`stock-status ${
+  product.stock > 50 ? 'in-stock' : 
+  product.stock > 10 ? 'low-stock' : 
+  'out-of-stock'
+}`}>
+  {product.stock > 50 ? 'In Stock' :
+   product.stock > 10 ? 'Low Stock' :
+   'Out of Stock'}
+</div>
+                <p className="rating">Rating: {product.discountPercentage}%</p>
+                <p className="stock">Stock: {product.stock}</p>
+              </div>
+              
             </div>
-        );
-    }
-}
+          ))}
+        </div>
+      </div>
+    );
+  };
 
 export default ProductList;
