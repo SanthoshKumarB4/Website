@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./home.css";
+import Welcome from "../welcome/welcome";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -51,6 +52,7 @@ const ProductList = () => {
 
   return (
     <div className="product-list-container">
+      <Welcome/>
       <h1 style={{ textAlign: "center" }}>Product List</h1>
       <div className="product-list">
         {products.map((product) => (
