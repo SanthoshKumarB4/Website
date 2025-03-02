@@ -1,24 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import './login.css';
 
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyD-e-4nNXJi5vqS6MRUvMyIymxgXg0BYgo",
-  authDomain: "mobile-a9b58.firebaseapp.com",
-  projectId: "mobile-a9b58",
-  storageBucket: "mobile-a9b58.firebasestorage.app",
-  messagingSenderId: "694832665353",
-  appId: "1:694832665353:web:a00d5d4d185a74d52739d8",
-  measurementId: "G-3V8VT2DRF2"
-};
-
-
-const app = initializeApp(firebaseConfig);
-// Initialize Firebase
-const auth = getAuth(app);
+const users = [
+  { email: 'santhosh@gmail.com', password: '1234' },
+];
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -26,14 +12,13 @@ const Login = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      // Successfully logged in, navigate to home
-      navigate('/home');
-    } catch (error) {
-      setError(error.message);
+    const user = users.find((user) => user.email === email && user.password === password);
+    if (user) {
+      navigate('/home'); // Navigate to home page on success
+    } else {
+      setError('Invalid email or password');
     }
   };
 
@@ -54,7 +39,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <input type="submit" />
+          <input type="submit" value="Login" />
         </form>
         {error && <p className="error">{error}</p>}
         <p>
