@@ -1,19 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
-
-
-
 #contact {
+  display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: 70px;
+  width: 100%;
 }
 
 .contact-box {
-  width: clamp(100px, 90%, 1000px);
-  margin: 80px 50px;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -43,11 +41,17 @@
     ), 
     #1f2e43;
   border-radius: 10px 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .contact-form-wrapper {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 0 10px 10px 0;
+  width: 50%; /* Reduced width */
+  padding: 5% 3% 7% 3%; /* Adjusted padding */
 }
 
 h2 {
@@ -60,38 +64,39 @@ h2 {
   margin-bottom: 20px;
 }
 
-.links {
+.social-icons {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  padding-top: 50px;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-.link {
-  margin: 10px;
-  cursor: pointer;
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.link img {
-  width: 45px;
-  height: 45px;
-  filter: 
-    hue-rotate(220deg)
-    drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.4));
-  transition: 0.2s;
-  user-select: none;
+.social-icons a:hover {
+  transform: scale(1.1);
+  background: #fd917e;
+  color: #fff;
 }
 
-.link img:hover {
-  transform: scale(1.1, 1.1);
+.social-icons a svg {
+  color: #1f2e43;
+  font-size: 18px;
+  transition: 0.3s;
 }
 
-.link img:active {
-  transform: scale(1.1, 1.1);
-  filter: 
-    hue-rotate(220deg)
-    drop-shadow(2px 4px 4px #222)
-    sepia(0.3);
+.social-icons a:hover svg {
+  color: #fff;
 }
 
 .form-item {
@@ -119,23 +124,13 @@ input, textarea {
   outline: 0;
   border: 1px solid #ccc;
   border-radius: 4px;
-  padding: 12px;
-  font-size: clamp(15px, 1.5vw, 18px);
+  padding: 10px;
+  font-size: clamp(14px, 1.2vw, 16px); /* Adjusted font size */
   background-color: transparent;
 }
 
-input:focus + label,
-input:valid + label, 
-textarea:focus + label, 
-textarea:valid + label,
-label.active {
-  font-size: clamp(13px, 1.3vw, 16px);
-  color: #777;
-  top: -20px;
-}
-
 textarea {
-  min-height: 150px;
+  min-height: 120px; /* Reduced height */
   resize: vertical;
 }
 
@@ -146,7 +141,7 @@ textarea {
   font-family: "Poppins", sans-serif;
   font-size: clamp(16px, 1.6vw, 18px);
   display: block;
-  padding: 12px 20px;
+  padding: 10px 18px; /* Adjusted button size */
   margin: 2px auto;
   border: none;
   border-radius: 4px;
@@ -166,43 +161,74 @@ textarea {
 }
 
 @media only screen and (max-width: 800px) {
+  .contact-box {
+    flex-direction: column; /* Stack elements vertically */
+    margin: 30px auto;
+  }
+
   .contact-links, .contact-form-wrapper {
     width: 100%;
+    padding: 8% 6%;
   }
-  
+
   .contact-links {
     border-radius: 10px 10px 0 0;
   }
-  
+
   .contact-form-wrapper {
     border-radius: 0 0 10px 10px;
   }
-  
-  .contact-box {
-    margin: 40px 20px;
-  }
-  
+
   h2 {
-    font-size: clamp(40px, 10vw, 60px);
+    font-size: clamp(32px, 8vw, 50px);
+  }
+
+  .social-icons a {
+    width: 35px;
+    height: 35px;
+  }
+
+  input, textarea {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .submit-btn {
+    padding: 10px 14px;
+    font-size: 16px;
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
   .contact-box {
     width: 95%;
-    margin: 8% 5%;
+    margin: 5% auto;
   }
-  
+
   h2 {
-    font-size: clamp(30px, 12vw, 60px);
+    font-size: clamp(28px, 10vw, 45px);
   }
-  
-  .links {
-    padding-top: 30px;
+
+  .contact-links, .contact-form-wrapper {
+    padding: 10% 5%;
   }
-  
-  .link img {
-    width: 38px;
-    height: 38px;
+
+  .social-icons {
+    gap: 8px;
+  }
+
+  .social-icons a {
+    width: 32px;
+    height: 32px;
+  }
+
+  input, textarea {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 8px 12px;
   }
 }

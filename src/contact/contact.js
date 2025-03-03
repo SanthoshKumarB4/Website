@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './contact.css';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -18,9 +19,7 @@ const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log('Form submitted:', formData);
-    // Reset form after submission
     setFormData({ sender: '', email: '', message: '' });
   };
 
@@ -29,27 +28,17 @@ const ContactSection = () => {
       <div className="contact-box">
         <div className="contact-links">
           <h2>CONTACT</h2>
+          <div className="social-icons">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+          </div>
           <div className="links">
-            <div className="link">
-              <a href="#linkedin">
-                <img src="https://i.postimg.cc/m2mg2Hjm/linkedin.png" alt="linkedin" />
-              </a>
-            </div>
-            <div className="link">
-              <a href="#github">
-                <img src="https://i.postimg.cc/YCV2QBJg/github.png" alt="github" />
-              </a>
-            </div>
-            <div className="link">
-              <a href="#codepen">
-                <img src="https://i.postimg.cc/W4Znvrry/codepen.png" alt="codepen" />
-              </a>
-            </div>
-            <div className="link">
-              <a href="#email">
-                <img src="https://i.postimg.cc/NjLfyjPB/email.png" alt="email" />
-              </a>
-            </div>
+            <div className="link"></div>
+            <div className="link"></div>
+            <div className="link"></div>
+            <div className="link"></div>
           </div>
         </div>
         <div className="contact-form-wrapper">
