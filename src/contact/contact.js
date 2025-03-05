@@ -44,33 +44,33 @@ const ContactSection = () => {
         <div className="contact-form-wrapper">
           <form onSubmit={handleSubmit}>
             <div className="form-item">
-              <input 
+            Name: <input 
                 type="text" 
                 name="sender" 
                 value={formData.sender}
                 onChange={handleChange}
                 required 
               />
-              <label className={formData.sender ? 'active' : ''}>Name:</label>
+              <label className={formData.sender ? 'active' : ''}></label>
             </div>
             <div className="form-item">
-              <input 
+            Email:<input 
                 type="email" 
                 name="email" 
                 value={formData.email}
                 onChange={handleChange}
                 required 
               />
-              <label className={formData.email ? 'active' : ''}>Email:</label>
+              <label className={formData.email ? 'active' : ''}></label>
             </div>
             <div className="form-item">
-              <textarea 
+            Message: <textarea 
                 name="message" 
                 value={formData.message}
                 onChange={handleChange}
                 required
               ></textarea>
-              <label className={formData.message ? 'active' : ''}>Message:</label>
+              <label className={formData.message ? 'active' : ''}></label>
             </div>
             <button className="submit-btn" type="submit">Send</button>
           </form>

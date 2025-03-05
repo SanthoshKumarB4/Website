@@ -1,5 +1,9 @@
 import React from "react";
 import "./welcome.css"; // Import the CSS file
+import { Link as ScrollLink } from 'react-scroll'; 
+
+
+
 
 const WelcomePage = () => {
   return (
@@ -9,7 +13,7 @@ const WelcomePage = () => {
         <p className="welcome-text">
           Get the best mobile solutions at your fingertips. Explore our services now!
         </p>
-        <button className="explore-button">Explore Now</button>
+        <ScrollLink to="mobile" smooth={true} duration={900}><button className="explore-button">Explore Now</button></ScrollLink>
       </div>
     </div>
   );
