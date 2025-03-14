@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './navbar.css'; // Import the CSS file
 import { Link as ScrollLink } from 'react-scroll'; 
 import { Link } from 'react-router';
+import logo from "../assets/logo2.png"; // Import your logo image
 
 const Header = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
@@ -18,8 +19,10 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <nav className="navbar">
-          <a  className="brand">Brand</a>
-          <div className="burger" id="burger" onClick={toggleMenu}>
+
+      <img src={logo} alt="Company Logo" className="image" />
+     
+               <div className="burger" id="burger" onClick={toggleMenu}>
             <span className="burger-line"></span>
             <span className="burger-line"></span>
             <span className="burger-line"></span>
@@ -28,12 +31,14 @@ const Header = () => {
           <div className={`menu ${isMenuActive ? 'is-active' : ''}`} id="menu">
             <ul className="menu-inner">
             <Link to="/" ><li className="menu-item"><a className="menu-link" onClick={closeMenu}>Home</a></li></Link>
-            <Link to="mobilepage"> <li className="menu-item"><a className="menu-link" onClick={closeMenu}>Mobile</a></li></Link>
-             <Link to="laptoppage"><li className="menu-item"><a className="menu-link" onClick={closeMenu}>Laptop</a></li></Link>
+            <Link to="services"> <li className="menu-item"><a className="menu-link" onClick={closeMenu}>services</a></li></Link>
+            <Link to="mobilepage"> <li className="menu-item"><a className="menu-link" onClick={closeMenu}>Send Issue</a></li></Link>
              <Link to="product"> <li className="menu-item"><a className="menu-link" onClick={closeMenu}>Products</a></li></Link>
+             <ScrollLink  to="contact" smooth={true} duration={900}><li className="menu-item"><a className="menu-link" onClick={closeMenu}>contact</a></li></ScrollLink>
+
             </ul>
           </div>
-         <ScrollLink  to="contact" smooth={true} duration={900}> <a  className="menu-block">Contact</a></ScrollLink> 
+         <Link  to="admin" > <a  className="menu-block">Admin</a> </Link>
         </nav>
       </div>
     </header>

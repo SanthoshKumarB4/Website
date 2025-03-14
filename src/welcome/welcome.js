@@ -9,7 +9,7 @@ const WelcomePage = () => {
   return (
     <div className="welcome-container">
       <div className="welcome-content">
-        <h1 className="welcome-title">Welcome to Venkateshwara Mobile Services</h1>
+        <h1 className="welcome-title">Welcome to Venkateshwara Mobile And Laptop Services</h1>
         <p className="welcome-text">
           Get the best mobile solutions at your fingertips. Explore our services now!
         </p>
