@@ -37,7 +37,6 @@
   
   /* Container Layout */
   .product-list-container {
-    background: linear-gradient(45deg, #203a43, #2c5364);
     min-height: 100vh;
     padding: var(--spacing-xl) 0;
   }

@@ -24,10 +24,10 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact">
+    
       <div className="contact-box">
         <div className="contact-links">
-          <h2>CONTACT</h2>
+          <h3>CONTACT</h3>
           <div className="social-icons">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
@@ -40,6 +40,11 @@ const ContactSection = () => {
             <div className="link"></div>
             <div className="link"></div>
           </div>
+          <p>Have any questions or need assistance? Feel free to reach out to us! We're here to help with all your laptop service needs. You can contact us via email or phone, and we'll get back to you as soon as possible.
+          <br></br>
+          <br></br>📧 Email: support@example.com
+          <br></br>📞 Phone: +1 234 567 890
+          <br></br>📍 Address: 123 Tech Street, City, Country</p>
         </div>
         <div className="contact-form-wrapper">
           <form onSubmit={handleSubmit}>
@@ -76,7 +81,7 @@ const ContactSection = () => {
           </form>
         </div>
       </div>
-    </section>
+  
   );
 };
 

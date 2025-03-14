@@ -1,0 +1,206 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #1d3557;
+    --secondary-color: #457b9d;
+    --accent-color: #e63946;
+    --light-gray: #f1faee;
+    --dark-gray: #343a40;
+    --text-light: #f8f9fa;
+    --border-radius: 8px;
+}
+/* Admin View Container */
+.admin-view-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+/* Admin Login Form */
+.admin-login-form {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: var(--text-light);
+    width: 100%;
+    max-width: 400px;
+}
+
+.admin-login-form h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #ffff;
+}
+
+.admin-login-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    font-size: 1rem;
+}
+
+.admin-login-form input:focus {
+    border: 2px solid var(--secondary-color);
+}
+
+.admin-login-form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.admin-login-form button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Admin Panel */
+.admin-panel {
+    width: 100%;
+    background: var(--primary-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: var(--text-light);
+    margin-top: 20px;
+    text-align: center;
+    overflow-x: auto;
+}
+
+.admin-panel h2 {
+    margin-bottom: 20px;
+    color: #ffff;
+
+    font-size: 1.8rem;
+}
+
+/* Requests Table */
+.requests-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: var(--text-light);
+    color: var(--dark-gray);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.requests-table th,
+.requests-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid var(--dark-gray);
+}
+
+.requests-table th {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.requests-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.requests-table tr:hover {
+    background-color: #dfe6e9;
+}
+
+/* Status Update Section */
+.requests-table select {
+    padding: 5px;
+    border: 2px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+}
+
+.requests-table button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.requests-table button:hover {
+    background-color: #d32f2f;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .admin-panel {
+        padding: 1.5rem;
+    }
+
+    .requests-table th,
+    .requests-table td {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .requests-table button {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-panel {
+        padding: 1rem;
+    }
+
+    .requests-table {
+        font-size: 0.9rem;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .requests-table th,
+    .requests-table td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-login-form {
+        padding: 1.5rem;
+    }
+
+    .admin-login-form input {
+        padding: 10px;
+    }
+
+    .admin-login-form button {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .admin-panel {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .requests-table {
+        font-size: 0.8rem;
+        overflow-x: auto;
+        display: block;
+    }
+}

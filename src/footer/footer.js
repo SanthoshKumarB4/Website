@@ -1,50 +1,31 @@
 import React from 'react';
-import './footer.css';
+import './footer.css'; // Import the CSS file
+
+import logo from "../assets/logo2.png"; // Import your logo image
+import { Link as ScrollLink } from 'react-scroll'; 
+import { Link } from 'react-router';
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="container">
-        <div className="row">
-          <div className="footer-col">
-            <h4>company</h4>
-            <ul>
-              <li><a href="#">about us</a></li>
-              <li><a href="#">our services</a></li>
-              <li><a href="#">privacy policy</a></li>
-              <li><a href="#">affiliate program</a></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>get help</h4>
-            <ul>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">shipping</a></li>
-              <li><a href="#">returns</a></li>
-              <li><a href="#">order status</a></li>
-              <li><a href="#">payment options</a></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>online shop</h4>
-            <ul>
-              <li><a href="#">watch</a></li>
-              <li><a href="#">bag</a></li>
-              <li><a href="#">shoes</a></li>
-              <li><a href="#">dress</a></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>follow us</h4>
-            <div className="social-links">
-              <a href="#"><i className="fab fa-facebook-f"></i></a>
-              <a href="#"><i className="fab fa-twitter"></i></a>
-              <a href="#"><i className="fab fa-instagram"></i></a>
-              <a href="#"><i className="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
+      <div className="footer-content">
+      <div className="footer-logo">
+      <img src={logo} alt="Company Logo" className="logo" />
+     
+        <ul className="footer-links">
+        <Link to="/" ><li className="menu-item"><a className="menu-link" >Home</a></li></Link>
+            <Link to="mobilepage"> <li className="menu-item"><a className="menu-link" >Send Issue</a></li></Link>
+             <Link to="product"> <li className="menu-item"><a className="menu-link">Products</a></li></Link>
+             <ScrollLink  to="contact" smooth={true} duration={900}><li className="menu-item"><a className="menu-link" >contact</a></li></ScrollLink>
+
+            
+        </ul>
         </div>
       </div>
+      
+        
+          <p>&copy; 2023 Your Company. All rights reserved.</p>
+       
     </footer>
   );
 };

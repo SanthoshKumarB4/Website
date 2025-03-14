@@ -1,55 +1,52 @@
 /* General styles for the welcome page */
 .welcome-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
-    padding:  20px;
-    box-sizing: border-box;
-  }
-  
- 
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+  padding: 10px; /* Reduced padding */
+  box-sizing: border-box;
+}
+
+.welcome-title {
+  font-size: 2em; /* Reduced font size */
+  color: #ffffff;
+  margin-bottom: 15px; /* Reduced margin */
+}
+
+.welcome-text {
+  font-size: 1em; /* Reduced font size */
+  color: #ffffff;
+  margin-bottom: 20px; /* Reduced margin */
+}
+
+.explore-button {
+  background-color: #4caf50;
+  color: white;
+  font-size: 1em; /* Reduced font size */
+  padding: 10px 20px; /* Reduced padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.explore-button:hover {
+  background-color: #388e3c;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
   .welcome-title {
-    font-size: 2.5em;
-    color: #ffffff;
-    margin-bottom: 20px;
+      font-size: 1.5em; /* Further reduced font size for mobile */
   }
-  
+
   .welcome-text {
-    font-size: 1.2em;
-    color: #ffffff;
-    margin-bottom: 30px;
+      font-size: 0.9em; /* Further reduced font size for mobile */
   }
-  
+
   .explore-button {
-    background-color: #4caf50;
-    color: white;
-    font-size: 1.1em;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+      font-size: 0.9em; /* Further reduced font size for mobile */
+      padding: 8px 15px; /* Further reduced padding for mobile */
   }
-  
-  .explore-button:hover {
-    background-color: #388e3c;
-  }
-  
-  /* Mobile responsiveness */
-  @media (max-width: 600px) {
-    .welcome-title {
-      font-size: 2em;
-    }
-  
-    .welcome-text {
-      font-size: 1em;
-    }
-  
-    .explore-button {
-      font-size: 1em;
-      padding: 12px 25px;
-    }
-  }
-  
+}
