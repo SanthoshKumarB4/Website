@@ -11,20 +11,16 @@ const Footer = () => {
       <div className="footer-content">
       <div className="footer-logo">
       <img src={logo} alt="Company Logo" className="logo" />
-     
-        <ul className="footer-links">
+       <ul className="footer-links">
         <Link to="/" ><li className="menu-item"><a className="menu-link" >Home</a></li></Link>
-            <Link to="mobilepage"> <li className="menu-item"><a className="menu-link" >Send Issue</a></li></Link>
-             <Link to="product"> <li className="menu-item"><a className="menu-link">Products</a></li></Link>
-             <ScrollLink  to="contact" smooth={true} duration={900}><li className="menu-item"><a className="menu-link" >contact</a></li></ScrollLink>
-
-            
-        </ul>
-        </div>
+        <Link to="services"> <li className="menu-item"><a className="menu-link" >Services</a></li></Link>
+        <Link to="issue"> <li className="menu-item"><a className="menu-link" >Send Issue</a></li></Link>
+        <Link to="product"> <li className="menu-item"><a className="menu-link">Products</a></li></Link>
+        <ScrollLink  to="contact" smooth={true} duration={900}><li className="menu-item"><a className="menu-link" >contact</a></li></ScrollLink>
+       </ul>
       </div>
-      
-        
-          <p>&copy; 2023 Your Company. All rights reserved.</p>
+      </div>
+       <p>&copy; 2023 Your Company. All rights reserved.</p>
        
     </footer>
   );
