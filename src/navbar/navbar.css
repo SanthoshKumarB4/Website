@@ -240,3 +240,25 @@ video {
     width: 70px; /* Further reduce size */
   }
 }
+
+/* Close button for mobile screens */
+.close-btn {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-black);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Show close button for mobile screens */
+@media (max-width: 468px) {
+  .close-btn {
+    display: block;
+    color: rgba(224, 73, 17, 0.856);
+  }
+}

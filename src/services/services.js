@@ -25,11 +25,7 @@ const AboutUs = () => {
     <div className="max-w-6xl mx-auto p-6 bg-white shadow-lg rounded-lg">
       {/* Main Heading */}
       <h2 className="title">Welcome to Venkateshwara Repair Center</h2>
-      <p className="text-gray-700 text-lg text-center mb-8">
-        At **XYZ Repair Center**, we specialize in providing top-notch **laptop and mobile repair services**. 
-        Our expert technicians are trained to handle all major brands and models with **precision, reliability, and efficiency**.  
-        Whether you need a **screen replacement, battery repair, or software upgrade**, we ensure high-quality service at an affordable price.
-      </p>
+     
 
       {/* Laptop Repair Section */}
       <div className="mb-12">

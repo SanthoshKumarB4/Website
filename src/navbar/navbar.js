@@ -19,26 +19,32 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <nav className="navbar">
+          <Link to="/"><img src={logo} alt="Company Logo" className="image" /></Link>
 
-      <img src={logo} alt="Company Logo" className="image" />
-     
-               <div className="burger" id="burger" onClick={toggleMenu}>
+          <div className="burger" id="burger" onClick={toggleMenu}>
             <span className="burger-line"></span>
             <span className="burger-line"></span>
             <span className="burger-line"></span>
           </div>
-          <span className={`overlay ${isMenuActive ? 'is-active' : ''}`} onClick={closeMenu}></span>
-          <div className={`menu ${isMenuActive ? 'is-active' : ''}`} id="menu">
-            <ul className="menu-inner">
-            <Link to="/" ><li className="menu-item"><a className="menu-link" onClick={closeMenu}>Home</a></li></Link>
-            <Link to="services"> <li className="menu-item"><a className="menu-link" onClick={closeMenu}>services</a></li></Link>
-            <Link to="mobilepage"> <li className="menu-item"><a className="menu-link" onClick={closeMenu}>Send Issue</a></li></Link>
-             <Link to="product"> <li className="menu-item"><a className="menu-link" onClick={closeMenu}>Products</a></li></Link>
-             <ScrollLink  to="contact" smooth={true} duration={900}><li className="menu-item"><a className="menu-link" onClick={closeMenu}>contact</a></li></ScrollLink>
 
+          <span className={`overlay ${isMenuActive ? 'is-active' : ''}`} onClick={closeMenu}></span>
+
+          <div className={`menu ${isMenuActive ? 'is-active' : ''}`} id="menu">
+            {/* Close Button */}
+            <button className="close-btn" onClick={closeMenu}>&times;</button>
+
+            <ul className="menu-inner">
+              <Link to="/" onClick={closeMenu}><li className="menu-item"><a className="menu-link">Home</a></li></Link>
+              <Link to="services" onClick={closeMenu}><li className="menu-item"><a className="menu-link">Services</a></li></Link>
+              <Link to="issue" onClick={closeMenu}><li className="menu-item"><a className="menu-link">Send Issue</a></li></Link>
+              <Link to="product" onClick={closeMenu}><li className="menu-item"><a className="menu-link">Products</a></li></Link>
+              <ScrollLink to="contact" smooth={true} duration={900} onClick={closeMenu}>
+                <li className="menu-item"><a className="menu-link">Contact</a></li>
+              </ScrollLink>
             </ul>
           </div>
-         <Link  to="admin" > <a  className="menu-block">Admin</a> </Link>
+
+          <Link to="admin"><a className="menu-block">Admin</a></Link>
         </nav>
       </div>
     </header>

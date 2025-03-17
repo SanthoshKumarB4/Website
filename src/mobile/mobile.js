@@ -15,16 +15,16 @@ const Mainpage = () => {
            . We specialize in providing fast,and affordable laptop services to keep your device running smoothly. our team of experienced technicians is here to help.
 
           </p>
-         <Link to='mobilepage'>Learn More</Link> 
+         <Link to='services'>Learn More</Link> 
         </div>
       </div>
       <div className="main">
         <img src={image2} alt="Responsive 2-column layout" />
         <div>
-          <h1></h1>
+        <h1>Send Mobile And Laptop Issues</h1>
           <p>
-          </p>
-          <a href="/laptop-services">Learn More</a>
+          Welcome to our Mobile and Laptop Service Management platform! We understand how frustrating it can be when your devices stop working. Whether it’s a cracked screen, battery issues, slow performance, or software malfunctions, we’re here to help. Our platform allows you to easily submit your service request, track repair status using a unique ID, and get your device fixed quickly and efficiently.</p>
+          <Link to='issue'>Learn More</Link> 
         </div>
       </div>
     </div>
