@@ -42,8 +42,8 @@ const ContactSection = () => {
           </div>
           <p>Have any questions or need assistance? Feel free to reach out to us! We're here to help with all your laptop service needs. You can contact us via email or phone, and we'll get back to you as soon as possible.
           <br></br>
-          <br></br>📧 Email: support@example.com
-          <br></br>📞 Phone: +1 234 567 890
+          <br></br>📧 Email: Venkateshwara@gmail.com
+          <br></br>📞 Phone:  9342948977
           <br></br>📍 Address: 123 Tech Street, City, Country</p>
         </div>
         <div className="contact-form-wrapper">

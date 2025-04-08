@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import './navbar.css'; // Import the CSS file
-import { Link as ScrollLink } from 'react-scroll'; 
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router-dom'; // Note: Changed from 'react-router' to 'react-router-dom'
 import logo from "../assets/logo2.png"; // Import your logo image
 
 const Header = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
+  const location = useLocation();
 
+  // Don't render navbar if on admin page
+  if (location.pathname === '/admin') {
+    return null;
+  }
   const toggleMenu = () => {
     setIsMenuActive(!isMenuActive);
   };
@@ -34,17 +38,17 @@ const Header = () => {
             <button className="close-btn" onClick={closeMenu}>&times;</button>
 
             <ul className="menu-inner">
-              <Link to="/" onClick={closeMenu}><li className="menu-item"><a className="menu-link">Home</a></li></Link>
-              <Link to="services" onClick={closeMenu}><li className="menu-item"><a className="menu-link">Services</a></li></Link>
-              <Link to="issue" onClick={closeMenu}><li className="menu-item"><a className="menu-link">Send Issue</a></li></Link>
-              <Link to="product" onClick={closeMenu}><li className="menu-item"><a className="menu-link">Products</a></li></Link>
-              <ScrollLink to="contact" smooth={true} duration={900} onClick={closeMenu}>
-                <li className="menu-item"><a className="menu-link">Contact</a></li>
-              </ScrollLink>
+              <Link to="/" onClick={closeMenu}><li className="menu-item"><a className="menu-link">Home 🏠</a></li></Link>
+              <Link to="services" onClick={closeMenu}><li className="menu-item"><a className="menu-link">Services 🛠️</a></li></Link>
+              <Link to="issue" onClick={closeMenu}><li className="menu-item"><a className="menu-link">Send Issue 📩</a></li></Link>
+              <Link to="product" onClick={closeMenu}><li className="menu-item"><a className="menu-link">Products 📦</a></li></Link>
+            
+              <Link to="contact" onClick={closeMenu}><li className="menu-item"><a className="menu-link">Contact 📞</a></li></Link>
+              
             </ul>
           </div>
 
-          <Link to="admin"><a className="menu-block">Admin</a></Link>
+          <Link to="admin"><a className="menu-block">🔒Admin</a></Link>
         </nav>
       </div>
     </header>
