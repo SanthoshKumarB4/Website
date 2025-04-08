@@ -1,14 +1,21 @@
 import React from 'react';
 import './footer.css'; // Import the CSS file
-
+import {  useLocation } from 'react-router-dom'; 
 import logo from "../assets/logo2.png"; // Import your logo image
 import { Link as ScrollLink } from 'react-scroll'; 
 import { Link } from 'react-router';
 
 const Footer = () => {
+   const location = useLocation();
+  
+    // Don't render navbar if on admin page
+    if (location.pathname === '/admin') {
+      return null;
+    }
   return (
     <footer className="footer">
       <div className="footer-content">
+      <p>&copy; 2025 Your Company. All rights reserved.</p>
       <div className="footer-logo">
       <img src={logo} alt="Company Logo" className="logo" />
        <ul className="footer-links">
@@ -20,7 +27,7 @@ const Footer = () => {
        </ul>
       </div>
       </div>
-       <p>&copy; 2023 Your Company. All rights reserved.</p>
+       
        
     </footer>
   );

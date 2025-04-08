@@ -1,108 +1,335 @@
-/* Global Styles */
-.page {
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  margin: 0;
-  padding: 50px;
-  flex-direction: column;
+/* Base styles */
+.page-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  color: #333;
 }
 
-.center-wrapper {
+/* Main content container */
+.main-contents {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 500px;
+  gap: 2rem;
 }
 
-/* Form Container */
-form {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  text-align: center;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: all 0.3s;
-}
-
-input:focus, textarea:focus {
-  border-color: #2a5298;
-  box-shadow: 0px 0px 5px rgba(42, 82, 152, 0.5);
-  outline: none;
-}
-
-textarea {
-  resize: none;
-  height: 100px;
-}
-
-button {
-  background: #2a5298;
+/* Header styles */
+.gradient-header {
+ background-image: url('../assets/background.jpg');
+ background-size:cover;
   color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #1e3c72;
-}
-
-/* Status Check Section */
-.status-check {
-  margin-top: 20px;
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
   text-align: center;
-  width: 100%;
-  max-width: 400px;
 }
 
-h2 {
-  margin-bottom: 15px;
-  color: #1e3c72;
+/* Tab styles */
+.tabs-container {
+  display: flex;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd;
 }
 
-.status-data {
-  margin-top: 10px;
-  font-size: 18px;
+.tab-button {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #666;
+  position: relative;
+}
+
+.active-tab {
+  color: #13ac7e;
   font-weight: bold;
-  color: #2a5298;
 }
-.p{
-  color: #000000;
+
+.active-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(135deg, #13ac7e, #1c2749);
 }
-/* Responsive Design */
-@media (max-width: 600px) {
-  .page {
-      padding: 10px;
+
+/* Form section styles */
+.form-section-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.form-container {
+  flex: 1;
+  min-width: 400px;
+}
+
+.info-section {
+  flex: 1;
+  min-width: 400px;
+}
+
+/* Status section styles */
+.status-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.status-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.status-check-area {
+  flex: 1;
+  min-width: 300px;
+}
+
+.status-results {
+  flex: 2;
+  min-width: 300px;
+}
+
+.status-faq {
+  width: 100%;
+}
+
+/* Gradient card styles */
+.gradient-card {
+  min-width: 300px;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a2547, #0b7556c9);
+  color: white;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.gradient-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+/* Button styles */
+.gradient-button {
+  background: linear-gradient(135deg, #13ac7e, #1c2749);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.gradient-button:hover {
+  background: linear-gradient(135deg, #1c2749, #13ac7e);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gradient-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+/* Status styles */
+.status-input-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.status-input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.status-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.status-badge.pending {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.status-badge.in-progress {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.status-badge.completed {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-badge.cancelled {
+  background-color: #dc3545;
+  color: white;
+}
+
+.detail-row {
+  display: flex;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.detail-label {
+  font-weight: bold;
+  min-width: 180px;
+}
+
+.detail-value {
+  flex: 1;
+}
+
+.full-width {
+  flex-direction: column;
+}
+
+.notes-content {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  white-space: pre-wrap;
+}
+
+/* Process steps */
+.process-steps {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: step-counter;
+}
+
+.step-item {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1.5rem;
+  counter-increment: step-counter;
+}
+
+.step-item::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* FAQ styles */
+.faq-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.faq-item h4 {
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .form-section-container,
+  .status-content {
+    flex-direction: column;
   }
-  .center-wrapper {
-      max-width: 100%;
+  
+  .form-container,
+  .info-section,
+  .status-check-area,
+  .status-results {
+    min-width: 100%;
   }
-  form, .status-check {
-      padding: 20px;
+  
+  .gradient-card {
+    margin-right: 0;
+    width: 100%;
+  }
+  
+  .status-input-group {
+    flex-direction: column;
+  }
+  
+  .detail-row {
+    flex-direction: column;
+  }
+  
+  .detail-label {
+    margin-bottom: 0.25rem;
   }
 }

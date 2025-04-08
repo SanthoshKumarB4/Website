@@ -1,0 +1,173 @@
+.requests-page {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #212529;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.controls-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #4361ee;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+.status-filter {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    background: white;
+    min-width: 180px;
+    cursor: pointer;
+}
+
+.status-filter:focus {
+    outline: none;
+    border-color: #4361ee;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.requests-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.requests-table th {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    font-weight: 500;
+    text-align: left;
+    padding: 12px 15px;
+    white-space: nowrap;
+}
+
+.requests-table td {
+    padding: 12px 15px;
+    border-top: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.requests-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.issue-cell {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-badge.pending {
+    background-color: #fff0f0;
+    color: #f72585;
+}
+
+.status-badge.in-progress {
+    background-color: #f0f7ff;
+    color: #4895ef;
+}
+
+.status-badge.completed {
+    background-color: #f0fff4;
+    color: #4cc9f0;
+}
+
+.action-group {
+    display: flex;
+    gap: 10px;
+}
+
+.status-select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    background: white;
+    cursor: pointer;
+}
+
+.update-btn {
+    padding: 8px 15px;
+    background-color: #4361ee;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.update-btn:hover {
+    background-color: #3f37c9;
+}
+
+@media (max-width: 768px) {
+    .action-group {
+        flex-direction: column;
+    }
+
+    .status-select, .update-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .requests-table th, 
+    .requests-table td {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+}
